@@ -1,0 +1,6 @@
+# dsh-artcards bundle patch: one plugin row mounting the node half
+# (native open routes via webServer) and, through the package's dsh.client
+# declaration, the browser half (artifact card UI in the chat turn tail).
+- insert:
+    - id: artcards
+      name: dsh-artcards

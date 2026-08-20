@@ -1,0 +1,53 @@
+{
+  "name": "dsh-artcards",
+  "version": "1.0.0",
+  "description": "DSH Web 产物卡片：以矩形卡片展示对话产物，支持在 Finder 中显示、默认应用打开、以及用本机已安装的 Markdown 编辑器 / IDE 打开。",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "artifacts",
+    "open-with",
+    "finder"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js && node --test",
+    "test": "node --test"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/*.js",
+    "scripts/*.mjs",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "INSTALL.md",
+    "安装教程.md",
+    "install.sh",
+    "uninstall.sh",
+    "docs/images/artifact-cards.jpg",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ],
+      "platform": "web"
+    }
+  }
+}
